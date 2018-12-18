@@ -9,11 +9,17 @@
 import UIKit
 
 class MenuItemDetailViewController: UIViewController {
+    
+    // MARK: - Properties
+    
+    var menuItem: MenuItem!
 
+    // MARK: - Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        print(#function, menuItem)
     }
     
 
