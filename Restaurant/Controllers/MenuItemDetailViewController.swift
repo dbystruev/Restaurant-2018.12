@@ -37,6 +37,14 @@ class MenuItemDetailViewController: UIViewController {
         
         let priceString = String(format: "Add ($%.2f)", menuItem.price)
         addToOrderButton.setTitle(priceString, for: .normal)
+        
+        MenuController.shared.fetchImage(url: menuItem.imageURL) { image in
+            guard let image = image else { return }
+            
+            DispatchQueue.main.async {
+                self.imageView.image = image
+            }
+        }
     }
     
 
