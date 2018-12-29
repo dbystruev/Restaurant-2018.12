@@ -9,7 +9,15 @@
 import Foundation
 
 class MenuController {
+    static let orderUpdateNotification = Notification.Name("MenuController.orderUpdated")
+    
     static let shared = MenuController()
+    
+    var order = Order() {
+        didSet {
+            NotificationCenter.default.post(name: MenuController.orderUpdateNotification, object: nil)
+        }
+    }
     
     let baseURL = URL(string: "http://api.armenu.net:8090/")!
     
